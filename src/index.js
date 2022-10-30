@@ -35,7 +35,7 @@ const feedback = (state = {}, action) => {
             return state;
             ///TODO UNSURE HOW TO RESET FORM
         case 'RESET':
-            return {};   
+            return action.payload;   
     }
     return state;
 };

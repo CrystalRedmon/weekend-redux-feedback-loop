@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
 
     pool.query(sqlText)
         .then(result => {
-            resSend(result.rows);
-            console.log('DB GET successful');
+            res.send(result.rows);
+            console.log('DB GET successful', result.rows);
         })
         .catch(error => {
             resSendStatus(500);
@@ -35,11 +35,11 @@ router.get('/', (req, res) => {
         pool.query(sqlText, sqlParams)
             .then(dbRes => {
                 console.log('POST successful');
-                resSendStatus(201);
+                res.sendStatus(201);
             })
             .catch(error => {
                 console.log('POST failed, ', error);
-                resSendStatus(500);
+                res.sendStatus(500);
             });
     });
 });

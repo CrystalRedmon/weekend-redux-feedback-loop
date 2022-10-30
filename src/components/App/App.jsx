@@ -16,14 +16,30 @@ function App() {
 
   /// useEffect for onload page
   useEffect(() => {
-
+    fetchFeedback();
     /// GET method
     /// UNSURE WHAT I'M SUPPOSE TO BE GETTING AT THIS POINT
     /// SINCE THERE IS NO FEEDBACK TO GET YET.
     /// SHOULD I HAVE QUESTIONS IN THE DB/REDUX STORE
 
-
   })
+
+    const fetchFeedback= ()=>{
+
+      axios({
+        method: 'GET',
+        url: '/feedback/'
+      })
+      .then(response=>{
+        console.log('Fetch feedback successful, ', response.data);
+        ///SHOULD I ALSO COMPLETE A DISPATCH
+      })
+      .catch(error=>{
+        console.log('GET/fetchFeedback failed, ', error);
+      });
+
+
+    }
 
 
 
