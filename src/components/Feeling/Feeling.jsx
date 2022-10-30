@@ -31,6 +31,8 @@ function Feedback() {
             <input
                 onChange={(event) => setFeedback(event.target.value)}
                 type="number"
+                min="1"
+                max="5"
                 name="feedback"
                 required
             />

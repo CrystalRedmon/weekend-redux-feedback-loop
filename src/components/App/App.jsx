@@ -8,7 +8,8 @@ import Feeling from '../Feeling/Feeling';
 import Review from '../Review/Review';
 import Success from '../Success/Success';
 import Understanding from '../Understanding/Understanding';
-
+import Support from '../Support/Support';
+import Comments from '../Comments/Comments';
 
 
 function App() {
@@ -42,6 +43,14 @@ function App() {
 
         <Route path='/understanding' exact>
           <Understanding />
+        </Route>
+        
+        <Route path='/support' exact>
+          <Support />
+        </Route>
+
+        <Route path='/comments' exact>
+          <Comments />
         </Route>
 
         <Route path='/feedback/review' exact>

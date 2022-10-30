@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
-function Understanding() {
+function Support() {
 
     /// will send each response to redux store as we go along each feedback question
     const dispatch = useDispatch();
@@ -15,19 +15,19 @@ function Understanding() {
         evt.preventDefault();
 
         dispatch({
-            type: "UNDERSTANDING",
+            type: "SUPPORT",
             payload: feedback
         });
 
-        history.push('/support');
+        history.push('/comments');
     };
 
     return (<>
 
-        <h3>How well are you understanding the content?</h3>
+        <h3>How well are you being supported?</h3>
 
         <form onSubmit={handleSubmit}>
-        <label htmlFor="feedback">Understanding?</label>
+        <label htmlFor="feedback">Support?</label>
             <input
                 type="number"
                 min="1"
@@ -41,4 +41,4 @@ function Understanding() {
     </>);
 }
 
-export default Understanding;
+export default Support;
