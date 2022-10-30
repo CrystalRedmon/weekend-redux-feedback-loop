@@ -21,6 +21,10 @@ function Review() {
         })
             .then(response => {
                 console.log(response);
+                dispatch({
+                    type: 'RESET'
+                })
+
 
 
             })

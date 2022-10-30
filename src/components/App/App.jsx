@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import Feeling from '../Feeling/Feeling';
 import Review from '../Review/Review';
+import Success from '../Success/Success';
 
 
 
@@ -39,6 +40,10 @@ function App() {
         </Route>
         <Route path='/feedback/review' exact>
           <Review  />
+        </Route>
+        
+        <Route path='/success'>
+<Success/>
         </Route>
 
       </div>
