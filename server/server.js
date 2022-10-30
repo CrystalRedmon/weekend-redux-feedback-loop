@@ -10,10 +10,7 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 const feedbackRouter = require('./routes/feedback.router');
-app.use('/api/feedback', feedbackRouter);
-
-/// ERROR RECEIVED WITH THE EXPRESS ROUTE ⬇️
-/// throw new TypeError('Router.use() requires a middleware function
+app.use('/feedback', feedbackRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

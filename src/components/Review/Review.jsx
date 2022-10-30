@@ -10,8 +10,6 @@ function Review() {
     const feedback = useSelector(store => store.feedback);
 
 
-
-
     const handleSubmit = () => {
 
         axios({
@@ -21,12 +19,10 @@ function Review() {
         })
             .then(response => {
                 console.log(response);
+                ///// ⬇️ /// EMPTY FEEDBACK IN STORE  
                 dispatch({
                     type: 'RESET'
                 })
-
-
-
             })
             .catch(error => {
                 console.log('POST feedback failed: ', error)
@@ -34,12 +30,10 @@ function Review() {
         history.push('/success')
     }
 
-
-
-
     return (<>
 
         <h3>Review Your Feedback</h3>
+
         <ul>
             <li>Feelings: {feedback.feeling}</li>
             <li>Understanding: {feedback.understanding}</li>
@@ -48,7 +42,7 @@ function Review() {
         </ul>
 
         <button onClick={handleSubmit} >Submit</button>
-    </>)
+    </>);
 };
 
 export default Review;
