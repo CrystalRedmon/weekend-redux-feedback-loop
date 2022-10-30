@@ -4,7 +4,8 @@ import './App.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
-import Feedback from '../Feedback/Feedback';
+import Feeling from '../Feeling/Feeling';
+import Review from '../Review/Review';
 
 
 
@@ -33,9 +34,11 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
 
-        <Route>
-          {/* path='/feedback/:id' */}
-          <Feedback />
+        <Route path='/feedback' exact>
+          <Feeling />
+        </Route>
+        <Route path='/feedback/review' exact>
+          <Review  />
         </Route>
 
       </div>
