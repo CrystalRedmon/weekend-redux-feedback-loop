@@ -9,7 +9,6 @@ function Review() {
     const dispatch = useDispatch();
     const feedback = useSelector(store => store.feedback);
 
-
     const handleSubmit = () => {
 
         axios({
@@ -21,7 +20,8 @@ function Review() {
                 console.log(response);
                 ///// ⬇️ /// EMPTY FEEDBACK IN STORE  
                 dispatch({
-                    type: 'RESET'
+                    type: 'RESET',
+                    payload: {}
                 })
             })
             .catch(error => {

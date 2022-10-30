@@ -8,7 +8,7 @@ import { createStore, combineReducers, applyMiddleware} from 'redux';
 import logger from 'redux-logger';
 
 
-const feedback = (state = {feeling: 0, understanding: 0, support: 0, comments: ''}, action) => {
+const feedback = (state = {}, action) => {
     switch (action.type) {
         case 'FEELING':
             console.log(state)
@@ -33,9 +33,12 @@ const feedback = (state = {feeling: 0, understanding: 0, support: 0, comments: '
             }
         case 'GET_FEEDBACK':
             return state;
+            ///TODO UNSURE HOW TO RESET FORM
+        case 'RESET':
+            return {};   
     }
     return state;
-}
+};
 
 
 
