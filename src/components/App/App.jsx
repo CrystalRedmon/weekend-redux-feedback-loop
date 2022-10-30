@@ -7,6 +7,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import Feeling from '../Feeling/Feeling';
 import Review from '../Review/Review';
 import Success from '../Success/Success';
+import Understanding from '../Understanding/Understanding';
 
 
 
@@ -38,12 +39,17 @@ function App() {
         <Route path='/feedback' exact>
           <Feeling />
         </Route>
-        <Route path='/feedback/review' exact>
-          <Review  />
+
+        <Route path='/understanding' exact>
+          <Understanding />
         </Route>
-        
+
+        <Route path='/feedback/review' exact>
+          <Review />
+        </Route>
+      
         <Route path='/success'>
-<Success/>
+          <Success />
         </Route>
 
       </div>

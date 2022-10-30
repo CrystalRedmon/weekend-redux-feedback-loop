@@ -1,8 +1,8 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
+import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
-import {useHistory} from 'react-router-dom'
 
-function Feedback() {
+function Understanding() {
 
     /// will send each response to redux store as we go along each feedback question
     const dispatch = useDispatch();
@@ -11,32 +11,32 @@ function Feedback() {
     ///
     const [feedback, setFeedback] = useState(0);
 
-    const handleSubmit=(evt)=>{
+    const handleSubmit=(evt) =>{
         evt.preventDefault();
 
         dispatch({
-            type: "FEELING",
+            type: "UNDERSTANDING",
             payload: feedback
         });
 
-        history.push('/understanding');
+        history.push('/feedback/review');
     };
 
     return (<>
 
-        <h3>How Are You Feeling Today</h3>
+        <h3>How well are you understanding the content?</h3>
 
         <form onSubmit={handleSubmit}>
-            <label htmlFor="feedback">Feeling?</label>
+        <label htmlFor="feedback">Understanding?</label>
             <input
-                onChange={(event) => setFeedback(event.target.value)}
                 type="number"
-                name="feedback"
                 required
+                name="feedback"
+                onChange={(event) => setFeedback(event.target.value)}
             />
             <button type="submit">Next</button>
         </form>
     </>);
 }
 
-export default Feedback;
+export default Understanding;
