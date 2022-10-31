@@ -31,6 +31,11 @@ function Review() {
         history.push('/success')
     }
 
+    const onBackButton =()=>{
+
+        history.push('/comments');
+    }
+
     return (<>
 
         <h3>Review Your Feedback</h3>
@@ -42,7 +47,15 @@ function Review() {
             <li>Comments: {feedback.comments}</li>
         </ul>
 
-
+        <Button
+                onClick={onBackButton}
+                type="submit"
+                small
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+            >
+                Back
+            </Button>
         <Button
             onClick={handleSubmit}
             type="submit"
