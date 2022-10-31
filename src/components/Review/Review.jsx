@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 
 function Review() {
@@ -41,7 +42,17 @@ function Review() {
             <li>Comments: {feedback.comments}</li>
         </ul>
 
-        <button onClick={handleSubmit} >Submit</button>
+
+        <Button
+            onClick={handleSubmit}
+            type="submit"
+            small
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+        >
+            Submit
+        </Button>
+
     </>);
 };
 

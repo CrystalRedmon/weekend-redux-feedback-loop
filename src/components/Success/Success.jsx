@@ -1,4 +1,5 @@
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 
 function Success() {
@@ -9,7 +10,7 @@ function Success() {
 
 
 
-    const handleClick =()=>{
+    const handleClick = () => {
 
         history.push('/feedback');
 
@@ -18,8 +19,16 @@ function Success() {
         <h2>🌟 Feedback</h2>
 
         <h2>Thank You!</h2>
-        <button onClick={handleClick} >Leave New Feedback</button>
-
+        
+        <Button
+            onClick={handleClick}
+            type="submit"
+            small
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+        >
+            Leave New Feedback
+        </Button>
 
 
     </>)

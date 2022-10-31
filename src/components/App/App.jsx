@@ -10,6 +10,7 @@ import Success from '../Success/Success';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
+import Card from '@mui/material/Card';
 
 
 function App() {
@@ -57,6 +58,8 @@ function App() {
           <Feeling />
         </Route>
 
+
+        <Card variant="outlined"></Card>
         <Route path='/understanding' exact>
           <Understanding />
         </Route>
